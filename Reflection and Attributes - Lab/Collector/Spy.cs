@@ -14,7 +14,7 @@ namespace Collector
 
             StringBuilder sb = new StringBuilder();
 
-            foreach (MethodInfo method in (methods ?? throw new InvalidOperationException()).Where(x => x.Name.StartsWith("get")))
+            foreach (MethodInfo method in (methods ?? throw new ArgumentNullException()).Where(x => x.Name.StartsWith("get")))
             {
                 sb.AppendLine($"{method.Name} will return {method.ReturnType}");
             }
