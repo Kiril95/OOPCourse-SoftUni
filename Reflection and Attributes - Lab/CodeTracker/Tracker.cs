@@ -9,8 +9,7 @@ namespace CodeTracker
         public void PrintMethodsByAuthor()
         {
             Type classType = typeof(StartUp);
-            MethodInfo[] methods =
-                classType.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public);
+            MethodInfo[] methods = classType.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public);
 
             foreach (MethodInfo method in methods)
             {
