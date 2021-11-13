@@ -20,7 +20,7 @@ namespace Skeleton.Tests
             player = new Hero("Toshko", fakeAxe);
             startExp = 0;
         }
-
+         
         [Test]
         public void HeroGainsExperienceWhenTargetDies()
         {
