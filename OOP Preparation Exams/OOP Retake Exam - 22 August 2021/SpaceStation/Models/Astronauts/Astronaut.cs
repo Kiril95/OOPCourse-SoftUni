@@ -48,20 +48,8 @@ namespace SpaceStation.Models.Astronauts
             }
         }
 
-        public bool CanBreath
-        {
-            get => this.canBreath;
+        public bool CanBreath => this.Oxygen > 0;
 
-            private set
-            {
-                if (Oxygen < 0)
-                {
-                    value = false;
-                }
-
-                value = true;
-            }
-        }
         public IBag Bag { get; }
 
         public virtual void Breath()
