@@ -26,7 +26,7 @@ namespace Easter.Models.Bunnies
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentNullException(ExceptionMessages.InvalidBunnyName);
+                    throw new ArgumentException(ExceptionMessages.InvalidBunnyName);
                 }
 
                 this.name = value;
