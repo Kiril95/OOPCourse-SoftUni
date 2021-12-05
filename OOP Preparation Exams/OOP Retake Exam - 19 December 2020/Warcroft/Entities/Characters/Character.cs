@@ -83,13 +83,13 @@ namespace WarCroft.Entities.Characters.Contracts
         public IBag Bag { get; private set; }
         public bool IsAlive { get; set; } = true;
 
-		protected void EnsureAlive()
+	protected void EnsureAlive()
+	{
+		if (!this.IsAlive)
 		{
-			if (!this.IsAlive)
-			{
-				throw new InvalidOperationException(ExceptionMessages.AffectedCharacterDead);
-			}
+			throw new InvalidOperationException(ExceptionMessages.AffectedCharacterDead);
 		}
+	}
 
         public void TakeDamage(double hitPoints)
         {
