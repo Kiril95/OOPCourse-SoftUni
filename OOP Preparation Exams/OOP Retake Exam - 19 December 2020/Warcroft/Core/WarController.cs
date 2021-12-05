@@ -13,13 +13,13 @@ namespace WarCroft.Core
         private List<Character> heroes;
         private List<Item> items;
 
-		public WarController()
+	public WarController()
         {
             heroes = new List<Character>();
             items = new List<Item>();
         }
 
-		public string JoinParty(string[] args)
+	public string JoinParty(string[] args)
         {
             string charType = args[0];
             string heroName = args[1];
@@ -42,7 +42,7 @@ namespace WarCroft.Core
             return string.Format(SuccessMessages.JoinParty, heroName);
         }
 
-		public string AddItemToPool(string[] args)
+	public string AddItemToPool(string[] args)
         {
             string itemName = args[0];
             Item item;
@@ -64,7 +64,7 @@ namespace WarCroft.Core
             return string.Format(SuccessMessages.AddItemToPool, itemName);
         }
 
-		public string PickUpItem(string[] args)
+	public string PickUpItem(string[] args)
         {
             string heroName = args[0];
             Item targetItem = items.LastOrDefault();
@@ -86,7 +86,7 @@ namespace WarCroft.Core
         }
 
         public string UseItem(string[] args)
-		{
+	{
             string heroName = args[0];
             string itemName = args[1];
             var targetHero = heroes.FirstOrDefault(x => x.Name == heroName);
@@ -102,7 +102,7 @@ namespace WarCroft.Core
         }
 
         public string GetStats()
-		{
+	{
             StringBuilder sb = new StringBuilder();
             var ordered = heroes
                 .OrderByDescending(x => x.IsAlive)
@@ -120,7 +120,7 @@ namespace WarCroft.Core
             return sb.ToString().TrimEnd();
         }
 
-		public string Attack(string[] args)
+	public string Attack(string[] args)
         {
             //POSSIBLE ERRORS
             string attackerName = args[0];
@@ -161,7 +161,7 @@ namespace WarCroft.Core
         }
 
         public string Heal(string[] args)
-		{
+	{
             //POSSIBLE ERRORS
             string healerName = args[0];
             string receiverName = args[1];
@@ -189,5 +189,5 @@ namespace WarCroft.Core
                 targetHealer.Name, targetReceiver.Name, targetHealer.AbilityPoints, 
                 targetReceiver.Name, targetReceiver.Health);
         }
-	}
+    }
 }
